@@ -1,0 +1,67 @@
+0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spendi-Personal Money Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">spentie</div>
+      <div class="nav-links">
+        <button class="nav-btn" onclick="showSection('dashboard')">Dashboard</button>
+        <button class="nav-btn" onclick="showSection('add-transactions')">Add transaction</button>
+        <button class="nav-btn" onclick="showSection('recent-transactions')">Recent transaction</button>
+      </div>
+  </nav>
+  <div class="container">
+    <section class="section" id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="card balance">
+        <h2>Total Balance</h2>
+        <p id="total-balance">₹0</p>
+      </div>
+      <div class="card income">
+        <h2>Total Income</h2>
+        <p id="total-income">₹0</p>
+      </div>
+      <div class="card expense">
+        <h2>Total Expense</h2>
+        <p id="total-expense">₹0</p>
+      </div>
+    </section>
+
+    <section class="section" id="add-transactions">
+      <h2>Add tansaction</h2>
+      <form onsubmit="addtransaction(event)">
+        <div class="form-grp">
+          <label>Title</label>
+          <input type="text" id="title" placeholder="eg.shopping,salary,..">
+        </div>
+        <div class="form-grp">
+          <label>Amount</label>
+          <input type="text" id="amount" placeholder="eg.1000">
+        </div>
+        <div class="form-grp">
+          <label>Type</label>
+          <select id="type">
+            <option>income</option>
+            <option>expense</option>
+          </select>
+
+        <button type="submit" class="submit-btn" onclick="addtransaction(event)">Save transaction</button>
+      </form>
+    </section>
+
+    <section id="recent-transactions" class="section">
+      <h2>Recent transaction</h2>
+      <ul id="transaction-list">
+
+      </ul>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
